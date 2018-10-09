@@ -6,25 +6,26 @@ import java.util.Stack;
 
 public class Task {
 
+  private static final List<Character> OPEN_BRACKETS = Arrays.asList('{', '[', '(');
+  private static final List<Character> CLOSE_BRACKETS = Arrays.asList('}', ']', ')');
+
   public static boolean checkBrackets(String string) {
     Stack<Character> checkingStack = new Stack<Character>();
-    List<Character> openBrackets = Arrays.asList('{', '[', '(');
-    List<Character> closeBrackets = Arrays.asList('}', ']', ')');
 
     for (int i = 0; i < string.length(); i++) {
       Character ch = string.charAt(i);
-      if (openBrackets.contains(ch)) {
+      if (OPEN_BRACKETS.contains(ch)) {
         checkingStack.push(ch);
         continue;
       }
 
-      if (closeBrackets.contains(ch)) {
+      if (CLOSE_BRACKETS.contains(ch)) {
         if (checkingStack.isEmpty()) {
           return false;
         }
         Character openBracket = checkingStack.pop();
-        int indexOfBracket = openBrackets.indexOf(openBracket);
-        Character closeBracket = closeBrackets.get(indexOfBracket);
+        int indexOfBracket = OPEN_BRACKETS.indexOf(openBracket);
+        Character closeBracket = CLOSE_BRACKETS.get(indexOfBracket);
         if (!ch.equals(closeBracket)) {
           return false;
         }
