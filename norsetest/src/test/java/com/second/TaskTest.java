@@ -1,5 +1,6 @@
 package com.second;
 
+import static com.second.Task.uniteTwoArraysWithStream;
 import static com.second.Task.uniteTwoSortedArrays;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -40,6 +41,12 @@ public class TaskTest {
   @Test
   public void shouldUniteTwoSortedArrays() {
     int[] actualResult = uniteTwoSortedArrays(array1, array2);
+    assertThat(actualResult, is(expectedResult));
+  }
+
+  @Test
+  public void shouldUniteTwoArraysWithStream() {
+    int[] actualResult = uniteTwoArraysWithStream(array1, array2);
     assertThat(actualResult, is(expectedResult));
   }
 }

@@ -1,7 +1,15 @@
 package com.second;
 
 
+import java.util.stream.IntStream;
+
 public class Task {
+
+  public static int[] uniteTwoArraysWithStream(int[] array1, int[] array2) {
+    return IntStream.concat(IntStream.of(array1), IntStream.of(array2))
+        .sorted()
+        .toArray();
+  }
 
   public static int[] uniteTwoSortedArrays(int[] array1, int[] array2) {
     int[] resultArray = new int[array1.length + array2.length];
