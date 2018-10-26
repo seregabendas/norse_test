@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class Task {
 
+    /*
+    По поводу стиля, если шла речь об стиле типо 2 пробела вместо 4,
+    то у меня стоял google стиль, который удалился, так как я переустанавливал идею
+     */
     public static void main(String[] args) {
         printPairsSumTen(new Integer[]{1, 2, 3, 2, 6, 4, 3, 5, 6, 7, -6, 16});
     }
